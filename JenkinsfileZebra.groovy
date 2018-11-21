@@ -30,7 +30,7 @@ pipeline {
      
 
                                     sh """(
-									 cd src/gateway/HelloWorld
+									 cd src/gateway/Savanna-Preview-API
                                      mvn install -X -Ptest -Dusername=riddhi_thacker@yahoo.com -Dpassword=Ridz94_@
                                     )"""
                                 
@@ -44,9 +44,9 @@ pipeline {
 
                                     sh """(
 									
-									 cd src/gateway/HelloWorld
+									 cd src/gateway/Savanna-Preview-API
 									 sleep 20
-									 APP_STATUSCODE=\$(curl -X OPTIONS --silent --output /dev/stderr --write-out "%{http_code}" http://riddhithacker-eval-test.apigee.net/helloworld/)
+									 APP_STATUSCODE=\$(curl -X OPTIONS --silent --output /dev/stderr --write-out "%{http_code}" http://riddhithacker-eval-test.apigee.net/savanna-preview-api/)
 									 if [ "\$APP_STATUSCODE" -eq 200 ]
 									 then
 									  echo "API is up and running"
@@ -66,7 +66,7 @@ pipeline {
 
                                     sh """(
 									
-									 cd src/gateway/HelloWorld
+									 cd src/gateway/Savanna-Preview-API
 									 
 									 mvn install -X -Pprod -Dusername=riddhi_thacker@yahoo.com -Dpassword=Ridz94_@
 									 
@@ -82,7 +82,7 @@ pipeline {
 
                                     sh """(
 									
-									 cd src/gateway/HelloWorld
+									 cd src/gateway/Savanna-Preview-API
 									 
 									 mvn install -X -Pprod -Dusername=riddhi_thacker@yahoo.com -Dpassword=Ridz94_@
 									 
